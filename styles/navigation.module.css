@@ -1,0 +1,12 @@
+.nav {
+    background-color: red;
+    padding: 3.0rem 2.0rem;
+}
+
+.nav ul {
+    display: flex;
+}
+
+.nav li {
+    padding-right: 2.0rem;
+}
