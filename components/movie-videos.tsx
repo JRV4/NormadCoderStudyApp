@@ -13,7 +13,6 @@ async function getVideos(id:string) {
 }
 
 export default async function MovieVideos({id}:{id:string}){
-    await new Promise(resolve => setTimeout(resolve, 5000));
     const videos = await getVideos(id);
     return <div className={styles.container}>
         {videos.map((video:any) => (

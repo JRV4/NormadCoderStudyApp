@@ -9,13 +9,14 @@ export const metadata = {
 interface IParams{
     params : {id : string};
 };
-
-export async function generateMetadata({params:{id,}}:IParams) {
+/*
+export function generateMetadata({params:{id,}}:IParams) {
     const movie = await getMovie(id);
     return {title : movie.title};
 };
+*/
 
-export default async function MovieDetail({params:{id,}}:IParams){
+export default function MovieDetail({params:{id,}}:IParams){
     return(
         <div>
             <Suspense fallback={<h1>Loading Movie Info</h1>}>
