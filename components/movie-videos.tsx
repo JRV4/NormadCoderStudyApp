@@ -4,7 +4,7 @@ import styles from "@/styles/movie-videos.module.css";
 
 async function getVideos(id:string) {
     console.log(`Fetching Video ${Date.now()}`);
-    await new Promise(resolve => setTimeout(resolve, 3000));
+    await new Promise(resolve => setTimeout(resolve, 5000));
     const response = await fetch(`${API_URL}/${id}/videos`);
     const video = await response.json(); 
     return video; //response.json();
