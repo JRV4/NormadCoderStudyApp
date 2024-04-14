@@ -1,9 +1,11 @@
 import { API_URL } from "@/app/constants";
 import styles from "@/styles/movie-info.module.css";
+import { unstable_noStore } from "next/cache";
 
 export async function getMovie(id:string){
+    unstable_noStore();
     //console.log(`Fetching Movie ${Date.now()}`);
-    //await new Promise(resolve => setTimeout(resolve, 5000));
+    await new Promise(resolve => setTimeout(resolve, 5000));
     const response = await fetch(`${API_URL}/${id}`);
     //const movie = await response.json();
     return  response.json();
