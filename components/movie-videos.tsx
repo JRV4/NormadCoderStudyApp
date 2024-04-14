@@ -1,10 +1,11 @@
 import exp from "constants";
 import { API_URL } from "@/app/constants";
 import styles from "@/styles/movie-videos.module.css";
+import { resolve } from "path";
 
 async function getVideos(id:string) {
     console.log(`Fetching Video ${Date.now()}`);
-    await new Promise(resolve => setTimeout(resolve, 4000));
+    //await new Promise(resolve => setTimeout(resolve, 4000));
     const response = await fetch(`${API_URL}/${id}/videos`);
     const video = await response.json(); 
     return video; //response.json();
@@ -12,6 +13,7 @@ async function getVideos(id:string) {
 }
 
 export default async function MovieVideos({id}:{id:string}){
+    await new Promise(resolve => setTimeout(resolve, 5000));
     const videos = await getVideos(id);
     return <div className={styles.container}>
         {videos.map((video:any) => (
