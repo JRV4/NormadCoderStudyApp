@@ -1,7 +1,7 @@
 export default function Loading(){
     return(
         <div>
-            <h1>로오오오오딩...!!!!</h1>
+            <h1>Looooooooooding</h1>
         </div>
     );
 }
