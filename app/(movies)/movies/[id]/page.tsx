@@ -21,7 +21,6 @@ export default function MovieDetail({params:{id,}}:IParams){
             <Suspense fallback={<h1>Loading Movie Info</h1>}>
                 <MovieInfo id={id} />
             </Suspense>
-            <h1>----------------------------------------</h1>
             <Suspense fallback={<h1>Loading Movie Videos</h1>}>
                 <MovieVideos id={id}/ >
             </Suspense>
