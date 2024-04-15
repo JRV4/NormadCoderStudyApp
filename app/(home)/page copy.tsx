@@ -3,8 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import "@/styles/global.css";
 import Movie from "@/components/movie";
-import WindowBase from "@/components/window-base";
-
+import styles from "@/styles/home.module.css";
 import { API_URL } from "../constants";
 
 export const metadata : Metadata = {
@@ -23,9 +22,13 @@ async function getMovies() {
 }
 
 export default async function Page(){
+    const movies = await getMovies();
+
     return (
-        <div className="h-[calc(100vh-3rem-2.5rem)] w-full text-gray-500 bg-gray-200 flex">
-            <WindowBase />
+        <div className={styles.container}>
+            {movies.map((movie : any) => (
+                <Movie key={movie.id} id={movie.id} title={movie.title} poster_path={movie.poster_path} />
+            ))}
         </div>
     );
 }

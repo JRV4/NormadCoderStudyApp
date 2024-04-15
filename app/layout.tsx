@@ -1,3 +1,5 @@
+import Menubar from "@/components/menubar";
+import Footer from "@/components/footer/footer";
 import Navigation from "@/components/navigation"
 import { Metadata } from "next";
 
@@ -17,8 +19,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navigation/>
-        {children}
+        <div className="min-h-screen">
+          <div>
+            <Menubar/>
+          </div>
+          {children}
+          <div>
+            <Footer/>
+          </div>
+        </div>
       </body>
     </html>
   )
