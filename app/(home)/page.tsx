@@ -85,12 +85,12 @@ export default function Page(){
     
 
     return (
-        <div ref={dockRef} className="h-[calc(100vh-3rem)] w-full text-gray-500 bg-cyan-700 flex flex-col">
-            <div className="w-full h-[calc(100vh-3rem-4.5rem)] bg-[url('/app/asset/images/macos-wallpaper-by-mohammad-alizade.jpg')]">
+        <div ref={dockRef} className="h-[calc(100dvh-3rem)] w-full text-gray-500 flex flex-col bg_img">
+            <div className="w-full h-[calc(100vh-3rem-4.5rem)]">
                 {windows}
             </div>
             <div className="flex pb-2 w-full justify-center justify-items-center">
-                <div className="flex min-w-max w-20 px-6 py-2 h-16 justify-center justify-items-center space-x-4 bg-gray-900/10 border border-gray-100 rounded-2xl">
+                <div className="flex min-w-max w-20 px-6 py-2 h-16 justify-center justify-items-center space-x-4 bg-gray-900/30 border border-gray-100 rounded-2xl">
                     {/* 
                     <div><button onClick={() => {AddWindow();}}>Multi V</button></div>
                     <div><button onClick={() => {AddWindow();}}>Multi</button></div>

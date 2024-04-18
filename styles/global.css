@@ -41,3 +41,8 @@
 .app {
     transition: width, height, margin-top, cubic-bezier(0.25, 1, 0.5, 1) 100ms;
 }
+
+.bg_img {
+    background-image: url('../app/asset/images/macos-wallpaper-by-mohammad-alizade.jpg');
+    background-size: cover;
+}
