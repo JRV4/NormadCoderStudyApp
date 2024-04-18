@@ -7,7 +7,7 @@ export default function App01(props:any){
 
     // onload
     useEffect(() => {
-        //console.log(`props.key=${props.id}`);
+        console.log(`props.key=${props.idx}`);
         const _movies = getMovies();
     }, []);
     

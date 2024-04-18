@@ -24,9 +24,6 @@ export default function RootLayout({
             <Menubar/>
           </div>
           {children}
-          <div>
-            <Footer/>
-          </div>
         </div>
       </body>
     </html>

@@ -22,3 +22,22 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+.dock {
+    margin: auto auto 12px auto;
+    border-radius: 24px;
+    padding: 0 12px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15));
+    box-shadow: rgba(255, 255, 255, 0.17) 0px 0px 0px 1px inset;
+}
+
+.app {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    /* padding: 0 6px; */
+}
+
+.app {
+    transition: width, height, margin-top, cubic-bezier(0.25, 1, 0.5, 1) 100ms;
+}

@@ -35,7 +35,10 @@ export default function WindowBase(props:any){
                     onMouseMove={(e) => {
                         e.stopPropagation();
                     }}
-                    onClick={(e)=>{props.closeFunc(winref.current)}}
+                    onClick={(e)=>{
+                        console.log(`aaa = ${props.id}`);
+                        props.closeFunc(props.id);
+                    }}
                 >
                     
                     <CgClose className="text-gray-500 hover:text-gray-100 hover:animate-spin" size="18px"/>
