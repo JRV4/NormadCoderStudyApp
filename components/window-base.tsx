@@ -1,124 +1,55 @@
 "use client";
-import { useState } from "react";
-import { CgArrowsExpandLeft, CgMaximize } from "react-icons/cg";
+import { useState, useEffect, useRef } from "react";
+import { CgArrowsExpandLeft, CgMaximize, CgMinimize, CgClose } from "react-icons/cg";
 import { LuGrip } from "react-icons/lu";
 import { Rnd } from "react-rnd";
-import { API_URL } from "@/app/constants";
-import Movie from "@/components/movie";
 
-export default async function WindowBase(){
-    /*
-    const [{ x, y }, setPosition] = useState({
-        x: 0,
-        y: 0,
-    });
-    */
-    async function getMovies() {
-        //await new Promise(resolve => setTimeout(resolve, 2000)); 
-        console.log("i am fetching!!!");
-        const response = await fetch(API_URL);
-        const movies = await response.json(); 
-        return movies;
-        //return fetch(URL).then(response => response.json());
-    }
 
-    //const movies = await getMovies();
 
+export default function WindowBase(props:any){
+    const winref = useRef(null);
+
+    // onload
+    useEffect(() => {
+        
+    }, []);
+    
     return(
-        <Rnd className="border-2 border-gray-800 bg-gray-700"
-            default={{
-                x: 0,
-                y: 0,
-                width: 400,
-                height: 400,
-                
-            }}
-            minHeight={200}
-            minWidth={200}
+        <Rnd
+            ref={winref} 
+            className="border-2 border-gray-800 bg-gray-700/50"
+            default={{x: 0, y: 0, width: 400, height: 400,}} minHeight={200} minWidth={200}
         >
             <div 
-                 className=" px-2 py-2 h-6 bg-gray-900 text-gray-100 border-solid border border-gray-800 cursor-pointer text-xs md:flex md:flex-row flex justify-between items-center"
+                 className="flex justify-between px-0.5 py-0 h-6 bg-gray-900 text-gray-100 border-solid border border-gray-800 cursor-pointer text-xs items-center"
             >
-                <div>window title</div>
+                <div className="w-full">window title</div>
+                <div className="px-1" onMouseDown={(e) => {e.stopPropagation();}} onMouseMove={(e) => {e.stopPropagation();}}>
+                    <CgMinimize className="text-gray-500 hover:text-gray-100 hover:animate-spin" size="18px"/>
+                </div>
+                <div className="px-1" onMouseDown={(e) => {e.stopPropagation();}} onMouseMove={(e) => {e.stopPropagation();}}>
+                    <CgMaximize className="text-gray-500 hover:text-gray-100 hover:animate-spin" size="18px"/>
+                </div>
+                <div className="px-1" 
+                    onMouseDown={(e) => {e.stopPropagation();}} 
+                    onMouseMove={(e) => {
+                        e.stopPropagation();
+                    }}
+                    onClick={(e)=>{props.closeFunc(winref.current)}}
+                >
+                    
+                    <CgClose className="text-gray-500 hover:text-gray-100 hover:animate-spin" size="18px"/>
+                </div>
             </div>
-            <div
-                onMouseDown={(e) => {e.stopPropagation();}} 
-                onMouseMove={(e) => {e.stopPropagation();}}
-                onResize={(e) => {console.log('aaaa');}}
-                className="max-h-[-webkit-fill-available] overflow-y-scroll px-2 py-2 border-solid border border-gray-800 h-[calc(100%-theme(spacing.6))] cursor-default"
+            <div onMouseDown={(e) => {e.stopPropagation();}} onMouseMove={(e) => {e.stopPropagation();}} 
+                className="max-h-[-webkit-fill-available] overflow-y-scroll px-2 py-2 border-solid border border-gray-800 opacity-50 h-[calc(100%-theme(spacing.6))] cursor-default"
             >
                 <div className="">
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
-                    <div>aaaaa</div>
+                    {props.children}
                 </div>
             </div>
  
         </Rnd>
-        
     );
     /*
     return(
@@ -157,5 +88,4 @@ export default async function WindowBase(){
         </div>
     );
     */
-   
 }
