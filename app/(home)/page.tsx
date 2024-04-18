@@ -7,6 +7,7 @@ import "@/styles/global.css";
 import App01 from "@/components/app01";
 import { FcStart, FcAutomatic, FcStackOfPhotos, FcFolder, FcAlarmClock, FcCalendar, FcCalculator } from "react-icons/fc";
 import { API_URL } from "../constants";
+import BACK_IMG from "../asset/images/macos-wallpaper-by-mohammad.webp";
 /*
 export const metadata : Metadata = {
     title : "Home",
@@ -82,10 +83,10 @@ export default function Page(){
         
     }, [windows]);
     
-   
+
     return (
-        <div ref={dockRef} className="h-[calc(100vh-3rem)] w-full text-gray-500 bg-cyan-700 flex flex-col bg-[url('https://drive.google.com/file/d/18_9Dm3RfOqv7xwmcdmPEMr6MW9lv3wct/view?usp=drivesdk')]">
-            <div className="w-full h-[calc(100vh-3rem-4.5rem)]">
+        <div ref={dockRef} className="h-[calc(100vh-3rem)] w-full text-gray-500 bg-cyan-700 flex flex-col">
+            <div className="w-full h-[calc(100vh-3rem-4.5rem)] bg-[url('/app/asset/images/macos-wallpaper-by-mohammad-alizade.jpg')]">
                 {windows}
             </div>
             <div className="flex pb-2 w-full justify-center justify-items-center">
