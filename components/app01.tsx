@@ -4,25 +4,27 @@ import  WindowBase from "./window-base";
 
 export default function App01(props:any){
     const [movies, setMovies] = useState<any[]>([]);
-
+    const [isLoading, setIsLoading] = useState(true);
     // onload
     useEffect(() => {
-        console.log(`props.key=${props.idx}`);
         const _movies = getMovies();
     }, []);
     
     async function getMovies() {
-        //await new Promise(resolve => setTimeout(resolve, 2000)); 
+        //await new Promise(resolve => setTimeout(resolve, 500)); 
+        setIsLoading(true);
         const response = await fetch(API_URL);
         const movies = await response.json(); 
         setMovies(movies);
+        setIsLoading(false);
         return movies;
         //return fetch(URL).then(response => response.json());
     }
 
     return (
         <WindowBase closeFunc={props.closeFunc} id={props.id}>
-            <Suspense>
+            {/*<Suspense fallback={<div>*** Loading ***</div>}>*/}
+            {isLoading ? <div className="flex w-full h-full items-center justify-center">Loading...</div> :
             <table>
                 <thead>
                     <tr>
@@ -41,7 +43,8 @@ export default function App01(props:any){
                     ))}
                 </tbody>
             </table>
-            </Suspense>
+}
+            { /*</Suspense> */}
         </WindowBase>
     );
 }

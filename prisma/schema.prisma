@@ -1,11 +1,5 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
   binaryTargets = ["native", "linux-musl", "debian-openssl-1.1.x"]
 }
 
@@ -14,16 +8,16 @@ datasource db {
   url      = env("DIRECT_URL")
 }
 
-
 model AppRunInfo {
-  @@map("APP_RUN_INFO")
+  APP_ID    String   @id
+  APP_TYPE  String
+  APP_NAME  String
+  TOP       String?
+  LEFT      String?
+  WIDTH     String?
+  HEIGHT    String?
+  CREATE_DT DateTime @default(now())
+  UPDATE_TD DateTime @default(now())
 
-  appId         String   @id
-  appName       String
-  top           String?
-  left           String?
-  width         String?
-  height        String?
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @default(now()) @map("updated_at")
+  @@map("APP_RUN_INFO")
 }

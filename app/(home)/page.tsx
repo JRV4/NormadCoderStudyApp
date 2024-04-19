@@ -90,7 +90,7 @@ export default function Page(){
                 {windows}
             </div>
             <div className="flex pb-2 w-full justify-center justify-items-center">
-                <div className="flex min-w-max w-20 px-6 py-2 h-16 justify-center justify-items-center space-x-4 bg-gray-900/30 border border-gray-100 rounded-2xl">
+                <div className="flex min-w-max w-20 px-6 py-2 h-16 justify-center justify-items-center space-x-4 bg-gray-100/20 border border-gray-100 rounded-2xl">
                     {/* 
                     <div><button onClick={() => {AddWindow();}}>Multi V</button></div>
                     <div><button onClick={() => {AddWindow();}}>Multi</button></div>
