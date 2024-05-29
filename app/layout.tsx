@@ -1,12 +1,12 @@
 import Menubar from "@/components/menubar";
-import Footer from "@/components/footer/footer";
+import Footer from "@/components/footer";
 import Navigation from "@/components/navigation"
 import { Metadata } from "next";
 
 export const metadata : Metadata = {
   title: {
     template : "%s | Next.js",
-    default : "Loading..."
+    default : "My Desk Space"
   },
   description : 'Description for this Site',
 };

@@ -1,0 +1,38 @@
+.noise_field{
+    background: #FFFFFF;
+    border:1px solid #000000; 
+}
+
+.no_display{
+    display: none;
+}
+
+
+.wave_circle_picker:hover{
+	fill: #333333;
+    cursor: pointer;
+}
+
+.swave_dist_text{
+	font: bold 10px sans-serif;
+    user-select: none;
+    background: red;
+    padding: 5px;
+}
+
+.ruler_dist_s_to_r_text{
+	font: bold 14px sans-serif;
+    user-select: none;
+    opacity: 1;
+}
+.ruler_line:hover{
+    fill: rgb(39, 132, 193);
+    stroke: rgb(39, 132, 193);
+    cursor: pointer;
+}
+
+.source_text{
+	font: bold 14px sans-serif;
+    user-select: none;
+    opacity: 1;
+}

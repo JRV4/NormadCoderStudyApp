@@ -18,7 +18,7 @@ export default function WindowBase(props:any){
         <Rnd
             ref={winref} 
             className="border-2 border-gray-800 bg-gray-200"
-            default={{x: 0, y: 0, width: 400, height: 400,}} minHeight={200} minWidth={200}
+            default={{x: 0, y: 0, width: 1130, height: 540,}} minHeight={200} minWidth={200}
         >
             <div 
                  className="flex justify-between px-0.5 py-0 h-6 bg-gray-900 text-gray-100 border-solid border border-gray-800 cursor-pointer text-xs items-center"
@@ -45,7 +45,7 @@ export default function WindowBase(props:any){
                 </div>
             </div>
             <div onMouseDown={(e) => {e.stopPropagation();}} onMouseMove={(e) => {e.stopPropagation();}} 
-                className="max-h-[-webkit-fill-available] overflow-y-scroll px-2 py-2 border-solid border border-gray-800 opacity-50 h-[calc(100%-theme(spacing.6))] cursor-default"
+                className="max-h-[-webkit-fill-available] overflow-y-scroll px-2 py-2 bg-white border-solid border border-gray-800 h-[calc(100%-theme(spacing.6))] cursor-default"
             >
                 <div className="h-full">
                     {props.children}

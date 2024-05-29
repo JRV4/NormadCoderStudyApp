@@ -1,6 +1,7 @@
 import { useState, useEffect, Suspense } from "react";
 import { API_URL } from "@/app/constants";
 import  WindowBase from "./window-base";
+import {TabProvider, TabList, Tab, TabPanel} from "./tab/tab-provider"
 
 export default function App01(props:any){
     const [movies, setMovies] = useState<any[]>([]);
@@ -25,25 +26,17 @@ export default function App01(props:any){
         <WindowBase closeFunc={props.closeFunc} id={props.id}>
             {/*<Suspense fallback={<div>*** Loading ***</div>}>*/}
             {isLoading ? <div className="flex w-full h-full items-center justify-center">Loading...</div> :
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Vote</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {movies == null ? "" : movies.map((movie : any) => (
-                    <tr key={movie.id}>
-                        <td>{movie.id}</td>
-                        <td>{movie.title}</td>
-                        <td>⭐️{movie.vote_average.toFixed(1)}</td>
-                    </tr>
-                    ))}
-                </tbody>
-            </table>
-}
+            <TabProvider>
+                <TabList>
+                    <Tab label="Memo - 1"></Tab>
+                    <Tab label="Memo - 2"></Tab>
+                    <Tab label="Memo - 3"></Tab>
+                </TabList>
+                <TabPanel>
+                    <div className="flex w-full h-full items-center justify-center">Memo - 1</div>
+                </TabPanel>
+            </TabProvider>
+            }
             { /*</Suspense> */}
         </WindowBase>
     );

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 import "@/styles/global.css";
 import App01 from "@/components/app01";
+import Noisetools from "@/components/noisetools";
 import { FcStart, FcAutomatic, FcStackOfPhotos, FcFolder, FcAlarmClock, FcCalendar, FcCalculator } from "react-icons/fc";
 import { API_URL } from "../constants";
 import BACK_IMG from "../asset/images/macos-wallpaper-by-mohammad.webp";
@@ -32,33 +33,6 @@ export default function Page(){
 
     const dockRef = useRef<HTMLDivElement>(null);
 
-    const handleAppHover = (ev: React.MouseEvent<HTMLDivElement>) => {
-        if (!dockRef.current) return;
-
-        alert("aaaa");
-        
-        const mousePosition = ev.clientX;
-        const iconPositionLeft = ev.currentTarget.getBoundingClientRect().left;
-        const iconWidth = ev.currentTarget.getBoundingClientRect().width;
-
-        const cursorDistance = (mousePosition - iconPositionLeft) / iconWidth;
-        const offsetPixels = scaleValue(
-        cursorDistance,
-        [0, 1],
-        [maxAdditionalSize * -1, maxAdditionalSize]
-        );
-
-        dockRef.current.style.setProperty(
-        "--dock-offset-left",
-        `${offsetPixels * -1}px`
-        );
-
-        dockRef.current.style.setProperty(
-        "--dock-offset-right",
-        `${offsetPixels}px`
-        );
-    };
-
     function CloseWindow(id:string){
         setWindows(oldValues => {
             return oldValues.filter(win => win.props.id !== id);
@@ -69,8 +43,16 @@ export default function Page(){
         return(<App01 key={key} id={key} closeFunc={CloseWindow}  />); 
     }
 
+    function NewNoisetools(key:string){
+        return(<Noisetools key={key} id={key} closeFunc={CloseWindow}  />); 
+    }
+
     function AddWindow(){
         setWindows([...windows, NewWindow(Date.now().toString())]);
+    }
+
+    function AddNoisetools(){
+        setWindows([...windows, NewNoisetools(Date.now().toString())]);
     }
 
     // onload
@@ -98,7 +80,7 @@ export default function Page(){
                     <div><button onClick={() => {AddWindow();}}>ISC</button></div>
                     */}
                     <div className="cursor-pointer" onClick={() => {AddWindow();}}><FcStart className="size-12 hover:scale-150 duration-500 hover:-translate-y-4 duration-500"  /></div>
-                    <div className="cursor-pointer" ><FcAutomatic className="size-12 hover:scale-150 duration-500 hover:-translate-y-4 duration-500"  /></div>
+                    <div className="cursor-pointer" onClick={() => {AddNoisetools();}}><FcAutomatic className="size-12 hover:scale-150 duration-500 hover:-translate-y-4 duration-500"  /></div>
                     <div className="cursor-pointer" ><FcStackOfPhotos className="size-12 hover:scale-150 duration-500 hover:-translate-y-4 duration-500"  /></div>
                     <div className="cursor-pointer" ><FcFolder className="size-12 hover:scale-150 duration-500 hover:-translate-y-4 duration-500"  /></div>
                     <div className="cursor-pointer" ><FcAlarmClock className="size-12 hover:scale-150 duration-500 hover:-translate-y-4 duration-500"  /></div>
