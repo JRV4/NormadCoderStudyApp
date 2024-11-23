@@ -6,7 +6,7 @@ import { Metadata } from "next";
 export const metadata : Metadata = {
   title: {
     template : "%s | Next.js",
-    default : "My Desk Space"
+    default : "NEXT.js Test Dev Space"
   },
   description : 'Description for this Site',
 };

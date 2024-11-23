@@ -23,7 +23,7 @@ export default function WindowBase(props:any){
             <div 
                  className="flex justify-between px-0.5 py-0 h-6 bg-gray-900 text-gray-100 border-solid border border-gray-800 cursor-pointer text-xs items-center"
             >
-                <div className="w-full">window title</div>
+                <div className="w-full">{props.title}</div>
                 <div className="px-1" onMouseDown={(e) => {e.stopPropagation();}} onMouseMove={(e) => {e.stopPropagation();}}>
                     <CgMinimize className="text-gray-500 hover:text-gray-100 hover:animate-spin" size="18px"/>
                 </div>

@@ -39,7 +39,7 @@ export default function Menubar(){
                     href=""
                     target="_blank"
                     rel="noreferrer"
-                >Logo
+                >NEXT.js Dev Workspace
                 </a>
                 </h1>
             </div>
